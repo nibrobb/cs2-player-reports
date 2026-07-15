@@ -12,6 +12,7 @@ import requests
 class ReportReason(StrEnum):
     OTHER_HACKING = "Other Hacking"
     AIM_HACKING = "Aim Hacking"
+    WALL_HACKING = "Wall Hacking"
 
 
 @dataclass
@@ -66,7 +67,7 @@ def main():
                 for nick in tr.find_all(class_="playerNickname"):
                     for item in tr.find_all("li"):
                         for s in item.stripped_strings:
-                            if s in ("Other Hacking", "Aim Hacking"):
+                            if s in (ReportReason.OTHER_HACKING, ReportReason.AIM_HACKING):
                                 link_title = nick.find("a", class_="linkTitle")
                                 report_reason = s
                                 profile_link = str(link_title["href"])  # type: ignore
