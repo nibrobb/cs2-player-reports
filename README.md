@@ -22,8 +22,9 @@ Go to `https://steamcommunity.com/id/YOUR_USERNAME_HERE/gcpd/730/?tab=playerrepo
 ## Generate JSON dump with player IDs
 
 ```bash
-uv sync --locked
+uv venv
 source .venv/bin/activate
+uv sync --locked
 uv run --env-file .env main.py
 ```
 
