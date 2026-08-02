@@ -10,4 +10,7 @@ wheels/
 .venv
 .env
 output.json
-data/
+.idea/
+
+# Caches
+.ruff_cache/
