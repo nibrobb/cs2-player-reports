@@ -18,7 +18,7 @@ Go to `https://steamcommunity.com/id/YOUR_USERNAME_HERE/gcpd/730/?tab=playerrepo
 
 1. Scroll to the bottom
 2. Click "LOAD MORE HISTORY"
-3. Repeat steps 1-2 until you have enough
+3. Repeat steps 1-2 until you feel you have enough
 4. <kbd>Ctrl</kbd> + <kbd>S</kbd> to save the dump, name it `reports.html`
 5. Copy `reports.html` into `data/`
 
@@ -47,6 +47,8 @@ options:
   --format {json,text}  the output format [DEFAULT=json]
 ```
 
-If you're feeling frisky, send Valve an email at <a href="mailto:cs2team@valvesoftware.com">
-cs2team@valvesoftware.com</a>
-to let them know you also feel helpless in this farm bot situation, and perhaps attach the compiled `output.json` file.
+To officially report, in addition to what do in-game, send Valve an email at <a href="mailto:cs2team@valvesoftware.com?subject=Farming%20Bot%20Report">
+cs2team@valvesoftware.com</a> or <a href="mailto:csgoteamfeedback@valvesoftware.com?subject=Farming%20Bot%20Report">csgoteamfeedback@valvesoftware.com</a> with the subject "Farming Bot Report", and perhaps attach the compiled `output.json` file.
+
+
+ 
