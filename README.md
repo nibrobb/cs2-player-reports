@@ -25,7 +25,7 @@ Go to `https://steamcommunity.com/id/YOUR_USERNAME_HERE/gcpd/730/?tab=playerrepo
 ## Generate JSON dump with player IDs
 
 ## Quick start
-
+Instructions assume you have got `uv` installed, if not, check out the official guide [here](https://github.com/astral-sh/uv)
 ```bash
 uv venv
 source .venv/bin/activate
