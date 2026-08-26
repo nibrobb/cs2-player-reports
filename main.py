@@ -54,14 +54,14 @@ def get_steamid64(vanity_url: str) -> str:
     content = json.loads(response.content)
     content_response = content["response"]
     steam_api_response = SteamAPIResponseInner(**content_response)
-    if steam_api_response.steamid is None:
+    if steam_api_response.steamid:
         raise ValueError("Error getting steam id")
     return steam_api_response.steamid
 
 
 def parse_dump(soup_tag: bs4.element.Tag, use_api: bool = False) -> set[Profiles]:
     cheaters: set[Profiles] = set()
-    checked_profiles = set()
+    checked_profiles: set[Profiles] = set()
 
     rows = soup_tag.table.tbody.find_all("tr")  # type: ignore[attribute]
     for tr in rows:
@@ -71,7 +71,11 @@ def parse_dump(soup_tag: bs4.element.Tag, use_api: bool = False) -> set[Profiles
                     if s in (ReportReason.OTHER_HACKING, ReportReason.AIM_HACKING):
                         link_title = nick.find("a", class_="linkTitle")
                         report_reason = s
-                        profile_link = str(link_title["href"])
+                        profile_link = (
+                            str(link_title["href"])
+                            if link_title
+                            else "Could not find profile link"
+                        )
                         if profile_link in checked_profiles:
                             continue
                         nickname = str(link_title.contents[0]).strip()  # type: ignore
